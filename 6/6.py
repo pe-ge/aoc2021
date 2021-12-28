@@ -11,12 +11,10 @@ def grow(current_day, lanternfish_state, table, num_days):
     new_lanternfish_state = lanternfish_state - 1
     if new_lanternfish_state >= 0:
         result = grow(current_day + 1, new_lanternfish_state, table, num_days)
-        table[(current_day, lanternfish_state)] = result
-        return result
     else:
         result = grow(current_day + 1, 6, table, num_days) + grow(current_day + 1, 8, table, num_days)
-        table[(current_day, lanternfish_state)] = result
-        return result
+    table[(current_day, lanternfish_state)] = result
+    return result
 
 
 def part1():
