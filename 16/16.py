@@ -8,8 +8,7 @@ sum_version_numbers = 0
 
 def to_binary(hex_number):
     binary = str(bin(int(hex_number, 16))[2:])
-    len_binary = len(binary)
-    num_leading_zeros = ceil(len_binary / 4) * 4 - len_binary
+    num_leading_zeros = len(hex_number) * 4 - len(binary)
     return f"{'0' * num_leading_zeros}{binary}"
 
 
